@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>calculator</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+	.table {
+    height: 500px;
+    width: 500px;
+    margin: auto;
+    background-color:black;
+}
+.display{
+	background-color: white;
+    color: black;
+    width: 100%;
+    height: 100%;
+ }
+ P{
+ 	text-align: center;
+ 	font-size: 50PX;
+ }
+ #btn{
+ 	width: 100%;
+ 	height:80%;
+ }
+ input[type=button] {
+    width: 100%;
+    height: 80%;
+    
+}
+</style>
+<body>
+	<p>CALCULATOR </p>
+	<div class="container" >
+	<table class="table" class="table table-center" >
+  <tr>
+    <td colspan="5"> <input class="display" type="text" id="output" disabled /> </td>
+ 
+  </tr>
+  <tr>
+    <td> <input type="button" class="btn btn-info" value="1" onclick="show('1')" /> </td>
+    <td> <input type="button" class="btn btn-info" value="2" onclick="show('2')" /> </td>
+    <td> <input type="button" class="btn btn-info" value="3" onclick="show('3')" /> </td>
+    <td colspan="2"> <input type="button" class="btn btn-danger" value="AC" onclick="clearScreen()" id="btn" /> </td>
+  </tr>
+  <tr>
+    <td> <input type="button" class="btn btn-info" value="4" onclick="show('4')" /> </td>
+    <td> <input type="button" class="btn btn-info" value="5" onclick="show('5')" /> </td>
+    <td> <input type="button" class="btn btn-info" value="6" onclick="show('6')" /> </td>
+    <td> <input type="button" class="btn btn-primary" value="+" onclick="show('+')" /> </td>
+    <td> <input type="button" class="btn btn-primary" value="-" onclick="show('-')" /> </td>
+  </tr>
+  <tr>
+    <td> <input type="button" class="btn btn-info" value="7" onclick="show('7')" /> </td>
+    <td> <input type="button" class="btn btn-info" value="8" onclick="show('8')" /> </td>
+    <td> <input type="button" class="btn btn-info" value="9" onclick="show('9')" /> </td>
+    <td> <input type="button" class="btn btn-primary" value="*" onclick="show('*')" /> </td>
+    <td> <input type="button" class="btn btn-primary" value="/" onclick="show('/')" /> </td>
+  </tr>
+  <tr>
+    <td> <input type="button" class="btn btn-info" value="." onclick="show('.')" /> </td>
+    <td> <input type="button" class="btn btn-info" value="0" onclick="show('0')" /> </td>
+    <td> <input type="button" class="btn btn-success" value="=" onclick="calculate()" id="btn" /> </td>
+    <td> <input type="button" class="btn btn-primary" value="%" onclick="show('%')" /> </td>
+    <td> <input type="button" class="btn btn-primary" value="sq" onclick="math('sq')" /> </td>
+  </tr>
+  </table>
+</div>	
+</body>
+<script type="text/javascript">
+	function clearScreen() {
+    document.getElementById("output").value = "";
+}
+ 
+function show(value) {
+    document.getElementById("output").value += value;
+}
+ function calculate() {
+    var p = document.getElementById("output").value;
+    var q = eval(p);
+    document.getElementById("output").value = q;
+}
+function math(value)
+{
+   var p = document.getElementById("output").value;
+    var q = p*p;
+    document.getElementById("output").value = q;	
+}
+</script>
+</html>
